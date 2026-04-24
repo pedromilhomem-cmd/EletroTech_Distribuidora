@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="rootPane" prefHeight="500.0" prefWidth="700.0" styleClass="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.SistemaController">
+   <children>
+
+      <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="500.0" prefWidth="700.0" spacing="20.0" styleClass="login-card" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label styleClass="label-titulo" text="EletroTech" />
+                  <Label styleClass="label-subtitulo" text="Gestão de Estoque e Vendas" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </VBox>
+
+            <VBox spacing="5.0" maxWidth="400.0"> <children>
+                  <Label styleClass="campo-label" text="USUÁRIO" />
+                  <TextField fx:id="txtUsuario" promptText="Digite seu login..." />
+               </children>
+            </VBox>
+
+            <VBox spacing="5.0" maxWidth="400.0">
+               <children>
+                  <Label styleClass="campo-label" text="SENHA" />
+                  <PasswordField fx:id="txtSenha" promptText="••••••••" />
+               </children>
+            </VBox>
+
+            <Button fx:id="btnAcessar" maxWidth="400.0" mnemonicParsing="false" onAction="#handleAcessar" styleClass="btn-principal" text="ACESSAR SISTEMA">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+
+            <Button mnemonicParsing="false" styleClass="btn-link" text="Esqueceu a senha?" />
+            
+         </children>
+      </VBox>
+      
+      <Button fx:id="btnTema" layoutX="570.0" layoutY="20.0" mnemonicParsing="false" onAction="#trocarTema" text="MODO ESCURO" />
+   </children>
+</AnchorPane>

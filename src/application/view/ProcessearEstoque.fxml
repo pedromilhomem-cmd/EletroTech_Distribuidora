@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="TOP_CENTER" style="-fx-background-color: #2b2b2b; -fx-padding: 20;" 
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.view.MovimentacaoController">
+    
+    <Label text="Histórico de Movimentação de Estoque" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="txtIdProduto" promptText="ID do Produto" prefWidth="100" style="-fx-background-color: #3c3f41; -fx-text-fill: white;"/>
+        <DatePicker fx:id="dpInicio" promptText="Data Início" prefWidth="150"/>
+        <DatePicker fx:id="dpFim" promptText="Data Fim" prefWidth="150"/>
+        <Button text="Pesquisar" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-cursor: hand;"/>
+    </HBox>
+
+    <TableView fx:id="tblMovimentacao" VBox.vgrow="ALWAYS" style="-fx-background-color: #3c3f41;">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colProduto" text="Produto" prefWidth="200" />
+            <TableColumn fx:id="colData" text="Data/Hora" prefWidth="120" />
+            <TableColumn fx:id="colQuantidade" text="Qtd" prefWidth="80" />
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100" />
+        </columns>
+    </TableView>
+</VBox>

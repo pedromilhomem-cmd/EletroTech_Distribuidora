@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox spacing="10" style="-fx-background-color: #1e1e1e; -fx-padding: 15;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.VendasController">
+    
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <HBox spacing="10">
+            <TextField fx:id="txtBuscaProduto" promptText="ID ou Código de Barras" HBox.hgrow="ALWAYS" style="-fx-background-color: #333; -fx-text-fill: white; -fx-font-size: 16;"/>
+            <Button text="Adicionar"  style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </HBox>
+        
+        <TableView fx:id="tblItens" VBox.vgrow="ALWAYS" style="-fx-background-color: #2b2b2b;">
+            <columns>
+                <TableColumn fx:id="colNome" text="Produto" prefWidth="250" />
+                <TableColumn fx:id="colQtd" text="Qtd" prefWidth="70" />
+                <TableColumn fx:id="colPreco" text="Preço Unit." prefWidth="100" />
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="100" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <VBox spacing="15" prefWidth="300" style="-fx-background-color: #2b2b2b; -fx-padding: 15; -fx-border-color: #444;">
+        <Label text="TOTAL" style="-fx-text-fill: #4CAF50; -fx-font-size: 18;"/>
+        <Label fx:id="lblTotalVenda" text="R$ 0,00" style="-fx-text-fill: white; -fx-font-size: 32; -fx-font-weight: bold;"/>
+        
+        <Separator style="-fx-opacity: 0.2;"/>
+        
+        <TextField fx:id="txtDesconto" promptText="Desconto R$" onKeyReleased="#recalcularPagamento"/>
+        
+        <ComboBox fx:id="cbFormaPagamento" promptText="Forma de Pagamento" prefWidth="Infinity"/>
+        <TextField fx:id="txtValorPago" promptText="Valor Recebido" style="-fx-font-size: 16;"/>
+        
+        <Label fx:id="lblTroco" text="Troco: R$ 0,00" style="-fx-text-fill: #ff9800; -fx-font-size: 18;"/>
+        
+        <Button text="FINALIZAR VENDA (F10)" onAction="#handleFinalizarVenda" prefWidth="Infinity" prefHeight="60" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+    </VBox>
+</HBox>
